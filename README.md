@@ -2,7 +2,6 @@
 
 ![Project Status](https://img.shields.io/badge/Status-Active-success)
 ![Platform](https://img.shields.io/badge/Platform-ESP32%20%7C%20Flutter-blue)
-![License](https://img.shields.io/badge/License-MIT-yellow)
 
 ---
 
