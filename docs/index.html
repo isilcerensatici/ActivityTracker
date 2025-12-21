@@ -41,7 +41,7 @@
         <div class="about-card">
           <i class="fas fa-mobile-alt"></i>
           <h3>Flutter Arayüzü</h3>
-          <p>Mobil uygulama, BLE üzerinden gelen JSON verilerini Stream yapısıyla dinler ve kullanıcıya anlık, gecikmesiz bir dashboard sunar.</p>
+          <p>Mobil uygulama, BLE characteristic üzerinden gelen JSON verilerini Stream tabanlı mimari ile dinler, parse eder ve kullanıcı arayüzünde gerçek zamanlı olarak günceller.</p>
         </div>
       </div>
     </div>
@@ -59,12 +59,18 @@
         <div class="step">
           <span class="step-number">02</span>
           <h4>İşleme & İletim</h4>
-          <p>ESP32 veriyi analiz eder ve BLE ile JSON formatında yayınlar.</p>
+          <p>ESP32, MPU6050’den aldığı ivme verilerini cihaz üzerinde analiz eder ve hareket sonuçlarını JSON formatında serileştirerek Bluetooth Low Energy (BLE) characteristic üzerinden yayınlar.
+          </p>
         </div>
         <div class="step">
           <span class="step-number">03</span>
           <h4>Görselleştirme</h4>
           <p>Flutter uygulaması veriyi yakalar ve ekrana canlı yansıtır.</p>
+        </div>
+        <div class="step">
+          <span class="step-number">04</span>
+          <h4>Bulut Kaydı</h4>
+          <p>Kullanıcı isteğe bağlı olarak egzersiz verilerini Firebase Authentication ile kimlik doğrulaması yapıldıktan sonra Firestore veritabanına kaydedebilir.</p>
         </div>
       </div>
     </div>
@@ -96,7 +102,7 @@
 
         <li>
             <i class="fas fa-database"></i> 
-            Egzersiz verilerinin ve kullanıcı profillerinin bulutta saklanması
+            Egzersiz geçmişinin ve kullanıcı oturum bilgilerinin Firebase Firestore üzerinde saklanması
         </li>
 
         <li>
@@ -169,4 +175,5 @@
   </footer>
 
 </body>
+
 </html>
