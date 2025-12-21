@@ -1,0 +1,349 @@
+/* --- GENEL DEĞİŞKENLER & AYARLAR --- */
+:root {
+  /* Renk Paleti: AYDINLIK (LIGHT) MOD */
+  --bg-body: #f0f2f5;       /* Arka plan: Çok açık, soğuk gri */
+  --bg-card: #ffffff;       /* Kartlar: Saf Beyaz */
+  --bg-card-hover: #fafafa; /* Hover: Çok hafif gri */
+  
+  --text-main: #1a1a1a;     /* Ana Başlıklar: Neredeyse Siyah */
+  --text-secondary: #4a4a4a;/* Alt Metinler: Koyu Gri */
+  --text-muted: #888888;    /* Detaylar: Orta Gri */
+  
+  --border-color: #e0e0e0;  /* Çerçeveler: İnce ve açık gri */
+  
+  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg-body);
+  color: var(--text-main);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+h1, h2, h3, h4 {
+  color: var(--text-main);
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  margin-bottom: 15px;
+}
+
+section {
+  padding: 100px 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* --- HERO SECTION (GİRİŞ) --- */
+.hero {
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  /* Arka plan: Beyazdan açık griye geçiş */
+  background: radial-gradient(circle at center, #ffffff 0%, #e0e0e0 100%);
+}
+
+.badge {
+  background: #ffffff;
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+  padding: 6px 16px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: inline-block;
+  margin-bottom: 25px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* Hafif gölge */
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  line-height: 1.1;
+  /* Metalik yazı efekti (Koyu tonlarda) */
+  background: -webkit-linear-gradient(#000000, #555555);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 20px auto 40px;
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+
+/* --- BUTONLAR --- */
+.btn {
+  display: inline-block;
+  padding: 14px 35px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: var(--transition);
+  margin: 0 10px;
+}
+
+.btn.primary {
+  background-color: var(--text-main); /* Siyah buton */
+  color: #ffffff; /* Beyaz yazı */
+  border: 1px solid var(--text-main);
+}
+
+.btn.primary:hover {
+  background-color: transparent;
+  color: var(--text-main); /* İçi boşalır, yazı siyah olur */
+}
+
+.btn.secondary {
+  background-color: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+}
+
+.btn.secondary:hover {
+  border-color: var(--text-main);
+  color: var(--text-main);
+  background-color: #ffffff;
+}
+
+/* --- KART TASARIMLARI --- */
+.lead-text {
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  margin-bottom: 50px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.about-grid, .steps, .features ul, .tech-grid {
+  margin-top: 50px;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.about-card {
+  background: var(--bg-card);
+  padding: 40px;
+  border: 1px solid var(--border-color);
+  transition: var(--transition);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.02); /* Çok hafif gölge eklendi */
+}
+
+.about-card:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--text-muted);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.about-card i {
+  font-size: 2rem;
+  color: var(--text-main);
+  margin-bottom: 25px;
+}
+
+.about-card p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+/* --- WORKFLOW --- */
+.steps {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.step {
+  flex: 1;
+  min-width: 280px;
+  background: var(--bg-card);
+  padding: 40px 30px;
+  border: 1px solid var(--border-color);
+  position: relative;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+}
+
+.step-number {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 4rem;
+  font-weight: 700;
+  color: #f0f0f0; /* Arka plandaki numara çok silik gri */
+  line-height: 1;
+  z-index: 0;
+}
+
+.step h4, .step p {
+  position: relative;
+  z-index: 1;
+}
+
+.step p {
+  color: var(--text-muted);
+}
+
+/* --- ÖZELLİKLER --- */
+.features ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 15px;
+}
+
+.features li {
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  padding: 20px 25px;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  transition: var(--transition);
+}
+
+.features li:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--text-muted);
+  color: var(--text-main);
+}
+
+.features li i {
+  color: var(--text-main);
+  margin-right: 20px;
+  font-size: 1.1rem;
+}
+
+/* --- TECH STACK --- */
+.tech {
+  text-align: center;
+  border-bottom: none;
+}
+
+.tech-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tech-item {
+  background: #ffffff;
+  color: var(--text-secondary);
+  padding: 10px 30px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border: 1px solid var(--border-color);
+  border-radius: 2px;
+}
+
+/* --- FOOTER --- */
+footer {
+  text-align: center;
+  padding: 60px 0;
+  background: #1a1a1a; /* Footer kontrast için koyu kaldı */
+  border-top: 1px solid var(--border-color);
+}
+
+footer p {
+  color: #888;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+}
+
+.socials a {
+  color: #888;
+  font-size: 1.4rem;
+  margin: 0 15px;
+  transition: var(--transition);
+}
+
+.socials a:hover {
+  color: #ffffff;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+  .hero h1 { font-size: 2.2rem; }
+  .steps { flex-direction: column; }
+  section { padding: 60px 0; }
+  .container { padding: 0 15px; }
+}
+
+/* --- TEAM SECTION (EKİP) --- */
+.team-grid {
+  display: flex;
+  justify-content: center; /* Ortalar */
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.team-member {
+  background: var(--bg-card); /* Beyaz */
+  border: 1px solid var(--border-color);
+  padding: 30px;
+  text-align: center;
+  border-radius: 8px;
+  width: 300px; /* Kart genişliği */
+  transition: var(--transition);
+}
+
+.team-member:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+  border-color: var(--text-muted);
+}
+
+.avatar i {
+  font-size: 4rem;
+  color: var(--text-main); /* Siyah */
+  margin-bottom: 15px;
+}
+
+.team-member h3 {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+
+.team-member .role {
+  color: var(--text-muted); /* Gri */
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.team-socials a {
+  color: var(--text-secondary);
+  font-size: 1.2rem;
+  margin: 0 8px;
+  transition: var(--transition);
+}
+
+.team-socials a:hover {
+  color: var(--text-main);
+}
