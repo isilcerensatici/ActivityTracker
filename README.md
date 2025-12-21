@@ -64,7 +64,7 @@ Sistem sadece hareket tekrarını saymakla kalmaz, aynı zamanda **Yürüme, Ko�
 ### 👥 Geliştirici Ekip
 Bu proje, **Gömülü Sistemler** dersi kapsamında bir takım çalışması olarak geliştirilmiştir.
 
-* **[Muhammed Yusuf Kocaoğlan]** - *Gömülü Sistemler & Mobil Uygulama*
+* **Muhammed Yusuf Kocaoğlan** - *Gömülü Sistemler & Mobil Uygulama*
     * Devre tasarımı ve ESP32 programlaması.
     * Teknik dokümantasyon ve sunum materyallerinin hazırlanması.
 * **Işıl Ceren Satıcı** - *Web Sunumu & Dokümantasyon*
