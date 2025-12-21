@@ -29,7 +29,7 @@ The system not only counts repetitions but also analyzes the **intensity (G-forc
 ### 👥 The Team
 This project was developed as a collaboration for the **Embedded Systems** course.
 
-* **[Muhammed Yusuf Kocaoğlan]** - *Embedded Systems & Mobile Application*
+* **Muhammed Yusuf Kocaoğlan** - *Embedded Systems & Mobile Application*
     * Designed the circuit and programmed the ESP32.
     * Created technical documentation and presentation materials.
 * **Işıl Ceren Satıcı** - *Web Presentation & Documentation*
