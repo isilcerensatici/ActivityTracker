@@ -12,10 +12,11 @@ The system not only counts repetitions but also analyzes the **intensity (G-forc
 
 ### 🚀 Key Features
 * **Real-Time Activity Recognition:** Automatically detects and classifies movements using 6-axis accelerometer/gyroscope data.
-* **Low Latency Streaming:** Sends JSON data packets via BLE for instant feedback.
+* **Low Latency Streaming:** Sends real-time sensor data serialized in JSON format via BLE to the mobile application.
 * **Smart Analytics:** Calculates punch/step intensity and workout frequency.
 * **Mobile Dashboard:** A modern Flutter app to visualize counters, goals, and history.
 * **Cloud Integration:** Architecture ready for Firebase Authentication and Firestore database.
+  Firebase is used for user management and historical activity storage, not for real-time sensor data transmission.
 
 ### 🛠️ Tech Stack
 
@@ -47,10 +48,11 @@ Sistem sadece hareket tekrarını saymakla kalmaz, aynı zamanda **Yürüme, Ko�
 
 ### 🚀 Öne Çıkan Özellikler
 * **Gerçek Zamanlı Hareket Algılama:** 6 eksenli ivme ve jiroskop verilerini kullanarak hareketleri otomatik sınıflandırır.
-* **Düşük Gecikmeli Veri Akışı:** Anlık geri bildirim için verileri BLE üzerinden JSON paketleri halinde gönderir.
+* **Düşük Gecikmeli Veri Akışı:** Sensör verileri, JSON formatında serileştirilerek BLE üzerinden mobil uygulamaya gerçek zamanlı aktarılır.
 * **Akıllı Analiz:** Yumruk/adım şiddetini ve antrenman sıklığını hesaplar.
 * **Mobil Kontrol Paneli:** Sayaçları, hedefleri ve geçmişi görselleştiren modern bir Flutter arayüzü sunar.
 * **Bulut Entegrasyonu:** Firebase Authentication ve Firestore veritabanı entegrasyonuna uygun mimari.
+  Firebase, gerçek zamanlı sensör verisi aktarımı için değil; kullanıcı yönetimi ve egzersiz geçmişinin saklanması amacıyla kullanılmaktadır.
 
 ### 🛠️ Kullanılan Teknolojiler
 
