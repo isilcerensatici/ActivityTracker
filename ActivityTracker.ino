@@ -7,20 +7,15 @@
 #include <BLEUtils.h>
 #include <BLE2902.h>
 
-// BLE UUID
 #define SERVICE_UUID        "12345678-1234-1234-1234-1234567890ab"
 #define CHARACTERISTIC_UUID "abcdefab-1234-5678-1234-abcdefabcdef"
 
-// Nesneler
 Adafruit_MPU6050 mpu;
 TFT_eSPI tft = TFT_eSPI();
 
-// Pinler
 const int BUTON_PIN = 0;
 
-// Modlar
 int aktifMod = 0;
-// 0:Yurume, 1:Kosma, 2:Ziplama, 3:Yumruk, 4:Genel
 int sayaclar[4] = {0, 0, 0, 0};
 String modIsimleri[4] = {"YURUME", "KOSMA", "ZIPLAMA", "YUMRUK"};
 
@@ -28,18 +23,18 @@ unsigned long sonButonZamani = 0;
 bool ekranGuncelle = true;
 bool tamEkranTemizle = true;
 
-// --- ZAMAN KONTROLLERİ ---
+
 unsigned long sonYurumeZamani  = 0;
 unsigned long sonKosmaZamani   = 0;
 unsigned long sonRunAlgilama   = 0;
 unsigned long sonZiplamaZamani = 0;
 unsigned long sonYumrukZamani  = 0;
 
-// BLE
+
 BLECharacteristic *pCharacteristic;
 bool deviceConnected = false;
 
-// BLE Callback
+
 class MyServerCallbacks : public BLEServerCallbacks {
   void onConnect(BLEServer* pServer) {
     deviceConnected = true;
@@ -124,7 +119,7 @@ void loop() {
   unsigned long now = millis();
   int idx = -1;
 
-  // ZIPLAMA
+
   if (filteredForce >= 18.0 && filteredForce < 32.0) {
     if (now - sonZiplamaZamani > 600) {
       idx = 2;
@@ -132,7 +127,7 @@ void loop() {
     }
   }
 
-  // YUMRUK
+
   else if (filteredForce >= 32.0) {
     if (now - sonYumrukZamani > 700) {
       idx = 3;
@@ -140,7 +135,7 @@ void loop() {
     }
   }
 
-  // ✅ KOŞMA (ÖNCELİKLİ)
+
   else if (filteredForce >= 10.0 && filteredForce < 18.0) {
     if (now - sonKosmaZamani > 220) {
       idx = 1;
@@ -149,7 +144,7 @@ void loop() {
     }
   }
 
-  // ✅ YÜRÜME (KOŞMA YOKSA)
+
   else if (filteredForce >= 5.5 && filteredForce < 10.0) {
     if (now - sonRunAlgilama > 1200) {
       if (now - sonYurumeZamani > 550) {
